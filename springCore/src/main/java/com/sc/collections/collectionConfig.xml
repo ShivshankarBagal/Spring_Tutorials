@@ -10,22 +10,40 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-	<bean class="com.springCore.Student" name="student1">
+	<bean class="com.sc.collections.Employee" name="emp1">
 
-	<!--  <property name="studentId">
-	 <value>11</value>
-	</property> -->
-	<property name="studentId" value="100"></property>
-	<property name="studentName">
-	<value>Shivshankar Bagal</value>
-	</property>
-	
-	
-	<property name="studentAddress">
-	<value>Pune, Maharashtra</value>
-	</property>
-	
-	
+
+		<property name="empName" value="Maharudra dhage"></property>
+
+		<property name="empId">
+			<value>101</value>
+		</property>
+
+
+		<property name="mobilenumbers">
+			<list>
+
+				<value>9587462548</value>
+				<value>9587332548</value>
+				<value>9966558877</value>
+				<null/>
+
+
+			</list>
+		</property>
+
+		<property name="courses">
+
+			<set>
+
+				<value>FullStack Development</value>
+				<value>manual Testing</value>
+				<value>.Net Developer</value>
+
+			</set>
+		</property>
+
+
 	</bean>
 
 
