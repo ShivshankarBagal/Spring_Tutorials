@@ -11,20 +11,23 @@
 
 
 	<bean class="com.sp.RefInject.Order" name="order1">
-	
-	<property name="orderId" value="11"></property>
-	<property name="orderName" value="Study Table"></property>
-	
+
+		<property name="orderId" value="11"></property>
+		<property name="orderName" value="Study Table"></property>
+
 	</bean>
-	
+
 	<bean class="com.sp.RefInject.Customer" name="customer1">
-	
-	 <property name="customerId" value="101"/>
-	 <property name="customerName" value="Aniket HonMane"/>
-	 <property name="order">
-	  <ref bean="order1"/>
-	 </property>
-	
+
+		<property name="customerId" value="101" />
+		<property name="customerName" value="Aniket HonMane" />
+
+
+		<!-- <property name="order" <ref bean="order1"/> > -->
+		<property name="order">
+			<ref bean="order1" />
+		</property>
+
 	</bean>
 
 
