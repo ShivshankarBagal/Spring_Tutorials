@@ -1,17 +1,19 @@
 package com.autoWiring.annotation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Employee {
 	
 	@Autowired
+	@Qualifier("address11")
 	private Address address;
 
 	public Address getAddress() {
 		return address;
 	}
 
-	//@Autowired
+	
 	public void setAddress(Address address) {
 		System.out.println("using setter method");
 		this.address = address;

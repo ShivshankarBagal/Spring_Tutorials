@@ -10,7 +10,9 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-	<context:annotation-config />
+	
+	<context:component-scan base-package="com.autoWiring.annotation" />
+	
 
 
 	<!-- byName==> Name of bean must be same as reference name -->
@@ -20,14 +22,21 @@
 
 	<!-- byType==> -->
 
-	<bean class="com.autoWiring.annotation.Address" name="address">
+	<!-- <bean class="com.autoWiring.annotation.Address" name="address">
 
 		<property name="street" value="Phase3" />
 		<property name="city" value="Pune-Hinjawadi" />
 	</bean>
 
-	<bean class="com.autoWiring.annotation.Employee" name="EmployeeConfig"
-		 />
+	<bean class="com.autoWiring.annotation.Employee" name="EmployeeConfig" autowire="byType"/> -->
+	
+	<bean class="com.autoWiring.annotation.Address" name="address11">
+
+		<property name="street" value="Phase3" />
+		<property name="city" value="Pune-To-pune" />
+	</bean>
+
+	<bean class="com.autoWiring.annotation.Employee" name="EmployeeConfig" />
 
 
 
