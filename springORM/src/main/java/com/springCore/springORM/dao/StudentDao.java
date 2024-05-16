@@ -49,9 +49,10 @@ public class StudentDao {
 	
 	//update
 	@Transactional
-	public void updateStudent(Student s) {
-		this.hibernateTemplate.update(s);
+	public int updateStudent(Student s) {
+		 this.hibernateTemplate.update(s);
 		
+		return 1;
 	}
 	
 	
