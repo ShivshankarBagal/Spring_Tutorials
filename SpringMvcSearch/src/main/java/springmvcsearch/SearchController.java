@@ -19,10 +19,10 @@ public class SearchController {
 	public RedirectView search(@RequestParam("querybox") String query) {
 
 		String url = "https://www.google.com/search?q="+query;
-		//System.out.println(query);
+		System.out.println(query);
 		RedirectView redirectView = new RedirectView();
 		redirectView.setUrl(url);
-		//System.out.println(redirectView);
+		System.out.println(redirectView);
 		return redirectView;
 	}
 }
