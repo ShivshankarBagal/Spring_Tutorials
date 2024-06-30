@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.test.entities.Author;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -19,6 +21,7 @@ public class Book {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	@Column(name = "book_id")
 	private int id;
 	@Column(name = "book_name")
@@ -26,6 +29,7 @@ public class Book {
 	
 	
 	@OneToOne(cascade = CascadeType.ALL)
+	@JsonManagedReference
 	private Author author;
 
 	public Book(int id, String name, Author author) {

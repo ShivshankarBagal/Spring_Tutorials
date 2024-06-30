@@ -4,14 +4,38 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
+
 public class Author {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int authorId;
 	private String firstName;
 	private String lastName;
+
+	@OneToOne(mappedBy = "author")
+	@JsonBackReference
+	private Book book;
+
+	public Author(int authorId, String firstName, String lastName, Book book) {
+		super();
+		this.authorId = authorId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.book = book;
+	}
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
 
 	public Author() {
 		super();
@@ -42,16 +66,10 @@ public class Author {
 		this.lastName = lastName;
 	}
 
-	public Author(int authorId, String firstName, String lastName) {
-		super();
-		this.authorId = authorId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
-
 	@Override
 	public String toString() {
-		return "Author [authorId=" + authorId + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+		return "Author [authorId=" + authorId + ", firstName=" + firstName + ", lastName=" + lastName + ", book=" + book
+				+ "]";
 	}
 
 }
