@@ -13,7 +13,7 @@ public class LoginData {
 	@NotBlank(message = "User name can not blank")
 	@Size(min=3, max=20, message="userName between 3 - 20 characters")
 	private String userName;
-	@Email ()
+	@Email (message="emailmust contain @gmai.com")
 	private String email;
 	
 	public String getUserName() {
