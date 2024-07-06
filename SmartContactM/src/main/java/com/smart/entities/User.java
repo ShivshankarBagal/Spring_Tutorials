@@ -11,6 +11,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 public class User {
@@ -19,8 +22,13 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
+	@NotBlank(message = "Name must required")
+	@Size(min = 2, message = "min. 2 character required")
 	private String name;
+	
+	
 	@Column(unique = true)
+	@Email(message = "@gmail.com")
 	private String email;
 
 	private String password;
