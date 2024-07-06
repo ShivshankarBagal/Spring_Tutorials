@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="my-card mt-1" style="border-radius: 0% 7% 0% 7%">
+						<div th:if="${message}" th:classappend="${message.type}"
+							class="alert" role="alert">
+							<p th:text="${message.content}"></p>
+						</div>
+
+
+						<div class="containcer text-center">
+							<img class="mx-auto" style="width: 80px" alt=""
+								th:src="@{/img/resume1.png}" src="">
+						</div>
+
+						<h1 class="text-center">Register Here</h1>
+
+						<form action="" th:action="@{/do_register}" method="post"
+							th:object="${user}">
+							<!-- Name field -->
+							<div class="mb-3">
+								<label for="name_field" class="form-label">Your Name</label> <input
+									name="name" type="text" class="form-control" id="name_field"
+									placeholder="Enter_name" aria-describedby="emailHelp"
+									required="required" th:value="${user.name}" />
+							</div>
+
+							<!-- email -->
+							<div class="mb-3">
+								<label for="email_field" class="form-label">Your Email</label> <input
+									name="email" type="email" class="form-control" id="email_field"
+									placeholder="enter_email" aria-describedby="emailHelp"
+									required="required" th:value="${user.email}" />
+							</div>
+
+							<!-- password -->
+							<div class="mb-3">
+								<label for="password_field" class="form-label">Your
+									password</label> <input name="password" type="password"
+									class="form-control" id="password_field"
+									placeholder="enter_password" aria-describedby="emailHelp"
+									required="required" />
+							</div>
+
+							<!-- user about field -->
+							<div class="form-group">
+								<textarea name="about" th:value="${user.about}"
+									class="form-control" placeholder="enter about this contact"
+									rows="10" cols="50"></textarea>
+							</div>
+
+							<!-- check box -->
+							<div class="form-group form-check text-center">
+								<input type="checkbox" name="agreement" class="form-check-input"
+									 /> <label for="agreement"> Accept terms and
+									conditions</label>
+							</div>
+
+							<!-- buttons -->
+							<div class="container text-center">
+								<button type="submit" class="btn bg-primary text-white">Submit</button>
+								<button type="reset" class="btn btn-warning">Reset</button>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
