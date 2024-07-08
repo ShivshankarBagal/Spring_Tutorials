@@ -48,12 +48,11 @@ public class HomeController {
 	}
 	
 	//this handle for registering user
-
 	@PostMapping("/do_register")
-	public String registerUser(@Valid  @ModelAttribute("user") User user, 
+	public String registerUser(@Valid  @ModelAttribute("user") User user, BindingResult result1,
 	                           @RequestParam(value="agreement", defaultValue = "false") Boolean agreement, 
 	                           Model model, 
-	                           HttpSession session, BindingResult result1,
+	                           HttpSession session, 
 	                           RedirectAttributes redirectAttributes) {
 
 	    try {

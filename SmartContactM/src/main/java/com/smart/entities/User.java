@@ -23,7 +23,7 @@ public class User {
 	private int id;
 	
 	@NotBlank(message = "Name must required")
-	@Size(min = 2, message = "min. 2 character required")
+	@Size(min = 3, message = "min. 3 characters required")
 	private String name;
 	
 	
